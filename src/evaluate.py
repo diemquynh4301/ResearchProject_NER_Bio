@@ -11,10 +11,10 @@ def try_ast_eval(text):
 
 
 def gather_entities(examples, entity_key):
-    candidates = []
+    outputs = []
     for i, x in enumerate(examples):
-        candidates.extend([f"{i}__{e['text']}__{e['type']}" for e in x[entity_key]])
-    return candidates
+        outputs.extend([f"{i}__{e['text']}__{e['type']}" for e in x[entity_key]])
+    return outputs
     
 
 def compute_f1_metrics(candidates, references):
