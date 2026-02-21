@@ -1,0 +1,17 @@
+Below is a work-in-progress Named Entity Recognition (NER) guideline. 
+
+I will provide annotated examples after the guideline.
+
+Your task is to update and expand the guideline based on what can be learned from examples.
+
+Guidelines should remain concise.
+
+Guidelines:
+
+```md
+{guideline}
+```
+
+Examples:
+
+{examples}
