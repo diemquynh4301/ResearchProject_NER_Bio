@@ -78,8 +78,8 @@ guideline_history = [{"guideline":current_guideline, "examples":[]}]
 
 for i in trange(xp_config.n_updates):
     
-    example_start = i*xp_config.n_example
-    current_examples = examples[example_start:example_start+xp_config.n_example]
+    example_start = i*xp_config.n_examples
+    current_examples = examples[example_start:example_start+xp_config.n_examples]
     turns = [
         {"role":"user", "content":prompt.format(guideline=current_guideline, examples=current_examples)}
     ]
