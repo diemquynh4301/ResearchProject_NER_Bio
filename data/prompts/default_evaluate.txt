@@ -1,0 +1,22 @@
+Below is a Named Entity Recognition (NER) guideline.
+Your task is to follow this guideline to extract all relevant entities from the given text.
+
+```md
+{guideline}
+```
+
+Return your answer as a list of dictionaries in the following format:
+
+```json
+[
+  {"text": "entity_text", "type": "entity_type"},
+  {"text": "another_entity", "type": "entity_type"}
+]
+```
+
+Each dictionary must contain:
+- text: the exact entity mention as it appears in the text.
+- type: the corresponding entity type defined in the guideline.
+
+Only include entities that are explicitly defined in the guideline.
+Do not include explanations or additional text in your response.
