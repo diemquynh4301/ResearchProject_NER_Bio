@@ -17,7 +17,7 @@ def load_model(model_name_or_path, quantization_config):
     model = AutoModelForCausalLM.from_pretrained(
         model_name_or_path,
         quantization_config=quantization_config,
-        torch_dtype=torch.bfloat16,
+        dtype=torch.bfloat16,
         device_map=None,
         trust_remote_code=True
     )
