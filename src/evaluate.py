@@ -14,7 +14,7 @@ def gather_entities(examples, entity_key):
     outputs = []
     for i, x in enumerate(examples):
         outputs.extend([f"{i}__{e['text']}__{e['type']}" for e in x[entity_key]])
-    return outputs
+    return set(outputs)
     
 
 def compute_f1_metrics(candidates, references):
