@@ -32,10 +32,8 @@ def generate(turns, tokenizer, model, generation_config):
         turns,
         add_generation_prompt=True,
         return_tensors='pt'
-    ).to(model.device)
+    )["input_ids"].to(model.device)
     
-    print(input_ids)
-
     with torch.no_grad():
         outputs = model.generate(
             input_ids=input_ids,
