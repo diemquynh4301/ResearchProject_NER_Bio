@@ -3,7 +3,8 @@ import ast
 
 def try_ast_eval(text):
     try:
-        return ast.literal_eval(text)
+        items = ast.literal_eval(text)
+        return [i for i in items if "text" in i and "type" in i]
     except Exception as e:
         warnings.warn(f"ast literal eval fail:\n\n{e}\n\n{text}")
         return []
@@ -11,8 +12,8 @@ def try_ast_eval(text):
 
 def gather_entities(examples, entity_key):
     candidates = []
-    for x in examples:
-        x.extend(x[entity_key])
+    for i, x in enumerate(examples):
+        candidates.extend([f"{i}__{e['text']}__{e['type']}" for e in x[entity_key]])
     return candidates
     
 
