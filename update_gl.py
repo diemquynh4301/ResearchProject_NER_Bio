@@ -42,8 +42,8 @@ class ExperimentConfig():
     )
 
 
-parser = HfArgumentParser((ExperimentConfig, BitsAndBytesConfig, GenerationConfig))
-xp_config, quantization_config, generation_config = parser.parse_args_into_dataclasses()
+parser = HfArgumentParser((ExperimentConfig, BitsAndBytesConfig))
+xp_config, quantization_config = parser.parse_args_into_dataclasses()
 
 prompt = Path(xp_config.prompt_path).read_text()
 current_guideline = Path(xp_config.base_guideline_path).read_text()
@@ -51,6 +51,13 @@ examples = read_jsonl(xp_config.examples_path)
 
 tokenizer = load_tokenizer(xp_config.model_name_or_path)
 model = load_model(xp_config.model_name_or_path, quantization_config)
+
+generation_config = GenerationConfig(
+    max_new_tokens = 2048,
+    do_sample=False,
+    eos_token_id=tokenizer.eos_token_id,
+    pad_token_id=tokenizer.pad_token_id,
+)
 
 random.seed(xp_config.random_seed)
 random.shuffle(examples)
