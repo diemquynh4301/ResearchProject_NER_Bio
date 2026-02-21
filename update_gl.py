@@ -40,14 +40,26 @@ class ExperimentConfig():
         default=42, 
         metadata={"help": "Random seed used to shuffle examples."}
     )
+    load_in_8bit: bool = field(
+        default=False,
+        metadata={"help": "See https://huggingface.co/docs/transformers/v5.2.0/en/main_classes/quantization#transformers.BitsAndBytesConfig"}
+    )
+    load_in_4bit: bool = field(
+        default=False,
+        metadata={"help": "See https://huggingface.co/docs/transformers/v5.2.0/en/main_classes/quantization#transformers.BitsAndBytesConfig"}
+    )
 
 
-parser = HfArgumentParser((ExperimentConfig, BitsAndBytesConfig))
-xp_config, quantization_config = parser.parse_args_into_dataclasses()
+parser = HfArgumentParser((ExperimentConfig))
+xp_config = parser.parse_args_into_dataclasses()[0]
 
 prompt = Path(xp_config.prompt_path).read_text()
 current_guideline = Path(xp_config.base_guideline_path).read_text()
 examples = read_jsonl(xp_config.examples_path)
+
+quantization_config = BitsAndBytesConfig(
+    load_in_8bit=xp_config.load_in_8bit, load_in_4bit=xp_config.load_in_4bit
+)
 
 tokenizer = load_tokenizer(xp_config.model_name_or_path)
 model = load_model(xp_config.model_name_or_path, quantization_config)
