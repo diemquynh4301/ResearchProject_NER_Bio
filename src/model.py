@@ -33,6 +33,8 @@ def generate(turns, tokenizer, model, generation_config):
         add_generation_prompt=True,
         return_tensors='pt'
     ).to(model.device)
+    
+    print(input_ids)
 
     with torch.no_grad():
         outputs = model.generate(
