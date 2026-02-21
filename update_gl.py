@@ -57,6 +57,11 @@ prompt = Path(xp_config.prompt_path).read_text()
 current_guideline = Path(xp_config.base_guideline_path).read_text()
 examples = read_jsonl(xp_config.examples_path)
 
+output_dir = Path(xp_config.output_dir)
+    
+if not output_dir.is_dir():
+    output_dir.mkdir()
+
 quantization_config = BitsAndBytesConfig(
     load_in_8bit=xp_config.load_in_8bit, load_in_4bit=xp_config.load_in_4bit
 )
@@ -91,4 +96,4 @@ for i in trange(xp_config.n_updates):
         current_guideline = updated_guideline
     
     guideline_history.append({"guideline":current_guideline, "examples":current_examples})
-    write_jsonl(f"{xp_config.output_dir}/guideline_history.jsonl", guideline_history)
+    write_jsonl(f"{output_dir}/guideline_history.jsonl", guideline_history)
