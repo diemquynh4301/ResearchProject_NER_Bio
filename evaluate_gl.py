@@ -120,7 +120,7 @@ for i in trange(len(data)):
     example["raw_answer"] = raw_answer
 
     # Extract markdown block
-    extracted = extract_block(raw_answer)
+    extracted = extract_block(raw_answer, "json")
     print(extracted)
     example["extracted_block"] = extracted
 
