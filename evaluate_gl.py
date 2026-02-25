@@ -34,19 +34,20 @@ class EvalPrompt():
         default="results/toy/guideline_history.jsonl",
         metadata={"help": "Guideline history"}
     )
-    guideline_idx: int = field(default=-1)
+    guideline_idx: int = field(
+        default=-1
+    )
     n_prompt: int = field(
         default=2,
         metadata={"help": "Number of prompt that is used for evaluation."}
     )
     n_testdata: List[int] = field(
-    default_factory=lambda: [0, -1],
-    metadata={"help": "Indices of test data to evaluate."}
+        default_factory=lambda: [0, -1],
+        metadata={"help": "Indices of test data to evaluate."}
     )
 
     load_in_8bit: bool = field(default=False)
     load_in_4bit: bool = field(default=False)
-
 
 # -------------------------
 # Parse arguments
@@ -115,16 +116,13 @@ for i in trange(len(data)):
     }]
 
     raw_answer = generate(turns, tokenizer, model, generation_config)
-    print("Raw answer:\n\n", raw_answer, "\n\n")
 
     # store raw answer
     example["raw_answer"] = raw_answer
 
     # Extract markdown block
     extracted = extract_block(raw_answer, "json")
-    print(extracted)
     example["extracted_block"] = extracted
-
 
     # ---- parse extracted block ----
     example["pred_entities"] = try_ast_eval(extracted)
