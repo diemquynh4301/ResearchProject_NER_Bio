@@ -121,7 +121,7 @@ for i in trange(len(data)):
     example["raw_answer"] = raw_answer
 
     # Extract markdown block
-    extracted = extract_block(raw_answer, block_type="md")
+    extracted = extract_block(raw_answer)
     print(extracted)
     example["extracted_block"] = extracted
 
