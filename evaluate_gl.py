@@ -61,7 +61,6 @@ output_dir.mkdir(parents=True, exist_ok=True)
 # Load prompt
 # -------------------------
 prompt = Path(config.prompt_path).read_text()
-print(f"Prompt:\n\n{prompt}\n\n")
 
 # -------------------------
 # Load guideline history
@@ -69,7 +68,6 @@ print(f"Prompt:\n\n{prompt}\n\n")
 guideline_history = read_jsonl(config.guideline_history_path)
 
 current_guideline = guideline_history[config.guideline_idx]["guideline"]
-print(f"Current guideline:\n\n{current_guideline}\n\n")
 
 # -------------------------
 # Load test examples
@@ -116,6 +114,7 @@ for i in trange(len(data)):
     }]
 
     raw_answer = generate(turns, tokenizer, model, generation_config)
+    print("Raw answer:\n\n", raw_answer, "\n\n")
 
     # store raw answer
     example["raw_answer"] = raw_answer
