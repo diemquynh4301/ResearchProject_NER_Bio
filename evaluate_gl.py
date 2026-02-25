@@ -79,7 +79,7 @@ data = read_jsonl(config.data_path)
 if config.n_testdata is not None:
     start_idx, end_idx = config.n_testdata
     if end_idx < 0:
-        end_idx = len(data)  # interpret negative as 'till the end'
+        end_idx = len(data)
     data = data[start_idx:end_idx]
 
 # -------------------------
@@ -117,10 +117,8 @@ for i in trange(len(data)):
 
     raw_answer = generate(turns, tokenizer, model, generation_config)
 
-    # store raw answer
     example["raw_answer"] = raw_answer
 
-    # Extract markdown block
     extracted = extract_block(raw_answer, "json")
     example["extracted_block"] = extracted
 
