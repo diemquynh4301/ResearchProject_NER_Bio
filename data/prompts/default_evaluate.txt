@@ -5,6 +5,7 @@ Your task is to follow this guideline to extract all relevant entities from the 
 {guideline}
 ```
 
+Given text: {text}
 Return your answer as a list of dictionaries in the following format:
 
 ```json

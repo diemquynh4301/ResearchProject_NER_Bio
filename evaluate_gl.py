@@ -61,6 +61,7 @@ output_dir.mkdir(parents=True, exist_ok=True)
 # Load prompt
 # -------------------------
 prompt = Path(config.prompt_path).read_text()
+print(f"Prompt:\n\n{prompt}\n\n")
 
 # -------------------------
 # Load guideline history
@@ -68,6 +69,7 @@ prompt = Path(config.prompt_path).read_text()
 guideline_history = read_jsonl(config.guideline_history_path)
 
 current_guideline = guideline_history[config.guideline_idx]["guideline"]
+print(f"Current guideline:\n\n{current_guideline}\n\n")
 
 # -------------------------
 # Load test examples
@@ -109,7 +111,7 @@ for i in trange(len(data)):
         "role": "user",
         "content": prompt.format(
             guideline=current_guideline,
-            example=example["text"]
+            text=example["text"]
         )
     }]
 
