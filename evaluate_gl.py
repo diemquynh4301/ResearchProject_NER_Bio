@@ -40,7 +40,7 @@ class EvalPrompt():
         metadata={"help": "Number of prompt that is used for evaluation."}
     )
     n_testdata: List[int] = field(
-    default_factory=lambda: [1, 2],
+    default_factory=lambda: [0, -1],
     metadata={"help": "Indices of test data to evaluate."}
     )
 
@@ -76,9 +76,10 @@ data = read_jsonl(config.data_path)
 
 
 if config.n_testdata is not None:
-    data = [
-        data[i] for i in config.n_testdata if 0 <= i < len(data)
-    ]
+    start_idx, end_idx = config.n_testdata
+    if end_idx < 0:
+        end_idx = len(data)  # interpret negative as 'till the end'
+    data = data[start_idx:end_idx]
 
 # -------------------------
 # Load model + tokenizer
