@@ -126,7 +126,7 @@ for i in trange(len(data)):
 
 
     # ---- parse extracted block ----
-    data["pred_entities"] = try_ast_eval(extracted)
+    example["pred_entities"] = try_ast_eval(extracted)
 
 # ==================================================
 # Compute metrics
@@ -144,8 +144,7 @@ print(json.dumps(metrics, indent=2))
 # ==================================================
 # Save everything
 # ==================================================
+write_jsonl(output_dir / "eval_results.jsonl", data)
 
-# write_jsonl(output_dir / "eval_results.jsonl", examples)
-
-# with open(output_dir / "metrics.json", "w") as f:
-#     json.dump(metrics, f, indent=2)
+with open(output_dir / "metrics.json", "w") as f:
+    json.dump(metrics, f, indent=2)
