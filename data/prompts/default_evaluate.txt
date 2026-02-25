@@ -10,8 +10,8 @@ Return your answer as a list of dictionaries in the following format:
 
 ```json
 [
-  {"text": "entity_text", "type": "entity_type"},
-  {"text": "another_entity", "type": "entity_type"}
+  {{"text": "entity_text", "type": "entity_type"}},
+  {{"text": "another_entity", "type": "entity_type"}}
 ]
 ```
 
