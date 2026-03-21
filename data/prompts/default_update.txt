@@ -4,7 +4,9 @@ I will provide annotated examples after the guideline.
 
 Your task is to update and expand the guideline based on what can be learned from examples.
 
-Guidelines should remain concise.
+Guidelines should remain concise. 
+The goal is to identify general rules that can help correctly identify entities.
+Add specific examples only if they are useful for illustration.
 
 Guidelines:
 
