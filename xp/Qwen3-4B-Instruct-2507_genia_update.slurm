@@ -14,4 +14,4 @@ cd ~/ResearchProject_NER_Bio
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate mf-ner
 
-python -m update_gl --model_name_or_path="Qwen/Qwen3-4B-Instruct-2507" --output_dir="results/Qwen3-4B-Instruct-2507_genia_update"
+python -m update_gl --model_name_or_path="Qwen/Qwen3-4B-Instruct-2507" --output_dir="results/Qwen3-4B-Instruct-2507_genia_update" --max_new_tokens=200000

@@ -36,6 +36,10 @@ class ExperimentConfig():
         default=5,
         metadata={"help": "Number of examples used for each update."}
     )
+    max_new_tokens: int = field(
+        default=2048,
+        metadata={"help": "See https://huggingface.co/docs/transformers/v5.2.0/en/main_classes/text_generation#transformers.GenerationConfig"}
+    )
     random_seed: int = field(
         default=42, 
         metadata={"help": "Random seed used to shuffle examples."}
@@ -70,7 +74,7 @@ tokenizer = load_tokenizer(xp_config.model_name_or_path)
 model = load_model(xp_config.model_name_or_path, quantization_config)
 
 generation_config = GenerationConfig(
-    max_new_tokens = 2048,
+    max_new_tokens=xp_config.max_new_tokens,
     do_sample=False,
     eos_token_id=tokenizer.eos_token_id,
     pad_token_id=tokenizer.pad_token_id,
