@@ -9,7 +9,7 @@
 #SBATCH --cpus-per-task=16
 #SBATCH --partition=L40S 
 
-cd ~/MF-NER
+cd ~/ResearchProject_NER_Bio
 
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate mf-ner
