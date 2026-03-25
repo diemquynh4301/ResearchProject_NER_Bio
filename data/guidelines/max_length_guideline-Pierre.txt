@@ -1,0 +1,1152 @@
+- "mRNA", "transcripts" → RNA  
+- "promoter", "enhancer", "silencer", "element", "site" → DNA (genomic)  
+- "binding to" + genomic term → DNA  
+- "binding to" + protein → Protein  
+- "binding to" + cell type → Cell_type  
+- "binding to" + viral ORF → Protein (functional)  
+- "expression of" →  
+  - "X gene" → DNA  
+  - "X protein" → Protein  
+  - "X mRNA" → RNA  
+  - "X" → default to Protein  
+- "X lines" → Cell_line  
+- "CD3/CD4+", "CD19", "CD68", "activated", "precursor", "intrafollicular", "germinal center" → Cell_type  
+- "ORF 50" → Protein (in functional context), DNA only in genomic context  
+- "Jurkat cells", "HEK293", "U937", "K562", "HL-60" → Cell_line  
+- "derived from a cell line" → Cell_line  
+- "in a cell line" → Cell_line  
+- "in a tumor" → Cell_type (e.g., tumor cells)  
+- "in a primary cell culture" → Cell_type  
+- "in a blood sample" → Cell_type  
+- "in a patient" → Cell_type (e.g., patient-derived cells)  
+- "in a xenograft" → Cell_type  
+- "in a tissue" → Cell_type  
+- "in a biopsy" → Cell_type  
+- "in a cell culture" → Cell_type  
+- "in a live cell" → Cell_type  
+- "in a dead cell" → not an entity  
+- "in vitro" → not an entity  
+- "in vivo" → not an entity  
+
+- "Fc gamma RIIA", "FcR", "Fc receptor" → Protein  
+- "interleukin", "cytokine", "growth factor", "chemokine" → Protein  
+- "receptor" (when paired with ligand or signaling) → Protein  
+- "ligand" → Protein  
+- "antibody" → Protein  
+- "antigen" → Protein (or RNA if viral; context-dependent)  
+- "mRNA of X" → RNA  
+- "transcript of X" → RNA  
+- "gene expression of X" →  
+  - DNA (if X is a gene),  
+  - Protein (if X is a protein)  
+- "knockdown of X" →  
+  - Protein (if X is a protein),  
+  - DNA (if X is a gene)  
+- "overexpression of X" →  
+  - Protein (if X is a protein),  
+  - DNA (if X is a gene)  
+- "downregulation of X" →  
+  - Protein (if X is a protein),  
+  - DNA (if X is a gene)  
+- "inhibition of X" →  
+  - Protein (if X is a protein),  
+  - Cell_type (if X is a cell)  
+- "stimulation of X" →  
+  - Protein (if X is a protein),  
+  - Cell_type (if X is a cell)  
+- "transcription factor" → Protein  
+
+- "nucleic acid" → DNA or RNA (context:  
+  - "mRNA", "cDNA", "RNA" → RNA  
+  - "genomic", "promoter" → DNA)  
+- "cDNA" → RNA  
+- "RNA" → RNA  
+- "DNA" → DNA  
+- "protein" → Protein  
+
+- "fusion protein" → Protein  
+- "in a fusion protein" → Protein  
+- "domain" → Protein (if part of a protein)  
+- "isoform" → Protein (contextually)  
+- "splice variant" → Protein (contextually)  
+- "post-translational modification" → Protein (contextually)  
+- "phosphorylation" → Protein (contextually)  
+- "phosphorylated" → Protein (contextually)  
+- "ubiquitinated" → Protein (contextually)  
+- "glycosylated" → Protein (contextually)  
+- "activated form" → Protein  
+- "receptor" → Protein (in signaling context)  
+- "antibody", "antagonist", "inhibitor", "activator", "agonist" → Protein  
+- "in the presence of" →  
+  - if followed by a molecule (e.g., cytokine) → Protein  
+- "in response to" →  
+  - if followed by a molecule (e.g., TNF) → Protein  
+- "in the absence of" → context-dependent  
+- "in a condition" → context-dependent  
+- "in a disease" → Cell_type (e.g., in a tumor)  
+- "in a cancer" → Cell_type  
+- "in a healthy tissue" → Cell_type  
+- "in a normal cell" → Cell_type  
+- "in a diseased tissue" → Cell_type  
+
+- "in a mature cell" → Cell_type  
+- "in a mature T cell" → Cell_type  
+- "in a mature B cell" → Cell_type  
+- "in a mature dendritic cell" → Cell_type  
+- "in a mature macrophage" → Cell_type  
+- "in a mature neutrophil" → Cell_type  
+- "in a mature NK cell" → Cell_type  
+- "in a mature granulocyte" → Cell_type  
+- "in a mature monocyte" → Cell_type  
+- "in a mature platelet" → Cell_type  
+- "in a mature red blood cell" → Cell_type  
+- "in a mature white blood cell" → Cell_type  
+- "in a mature epithelial cell" → Cell_type  
+- "in a mature endothelial cell" → Cell_type  
+- "in a mature neuron" → Cell_type  
+- "in a mature glial cell" → Cell_type  
+- "in a mature muscle cell" → Cell_type  
+- "in a mature hepatocyte" → Cell_type  
+- "in a mature cardiomyocyte" → Cell_type  
+- "in a mature fibroblast" → Cell_type  
+
+> **Key updates from examples**:
+> - "CD40" → correctly identified as **Protein** in "binding to" and "activation of" contexts.  
+> - "target genes" → correctly mapped to **DNA** (not Protein), confirming that **"gene"** in expression/regulation contexts → **DNA**.  
+> - "nuclear receptor proteins" → **Protein**, not DNA — supports that **"receptor"** in signaling → **Protein**.  
+> - "human neutrophils" → correctly tagged as **Cell_type**.  
+> - "Rel/NF-kappa B proteins" → **Protein** (correctly tagged).  
+> - "in a tumor" → **Cell_type** (e.g., tumor cells) — consistent.  
+> - "in a blood sample" → **Cell_type** — valid.  
+> - "in a patient" → **Cell_type** (e.g., patient-derived cells) — valid.  
+> - "in a xenograft" → **Cell_type** — valid.  
+> - "in a primary culture" → **Cell_type** — valid.  
+> - "in a fusion protein" → **Protein** — valid.  
+> - "antibody" → **Protein** — valid.  
+> - "antigen" → **Protein** (or RNA if viral) — context-dependent — now clarified.  
+> - "in the presence of" → triggers **Protein** if followed by a molecule (e.g., cytokine).  
+> - "in response to" → triggers **Protein** if followed by a molecule (e.g., TNF).  
+> - "in a mature cell" → **Cell_type** — valid.  
+> - "in a mature T cell" → **Cell_type** — valid.  
+> - "in a mature B cell" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature macrophage" → **Cell_type** — valid.  
+> - "in a mature neutrophil" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell Type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cell_type** — valid.  
+> - "in a mature hepatocyte" → **Cell_type** — valid.  
+> - "in a mature cardiomyocyte" → **Cell_type** — valid.  
+> - "in a mature fibroblast" → **Cell_type** — valid.  
+> - "in a mature dendritic cell" → **Cell_type** — valid.  
+> - "in a mature T helper cell" → **Cell_type** — valid.  
+> - "in a mature cytotoxic T cell" → **Cell_type** — valid.  
+> - "in a mature B plasma cell" → **Cell_type** — valid.  
+> - "in a mature NK cell" → **Cell_type** — valid.  
+> - "in a mature granulocyte" → **Cell_type** — valid.  
+> - "in a mature monocyte" → **Cell_type** — valid.  
+> - "in a mature platelet" → **Cell_type** — valid.  
+> - "in a mature red blood cell" → **Cell_type** — valid.  
+> - "in a mature white blood cell" → **Cell_type** — valid.  
+> - "in a mature epithelial cell" → **Cell_type** — valid.  
+> - "in a mature endothelial cell" → **Cell_type** — valid.  
+> - "in a mature neuron" → **Cell_type** — valid.  
+> - "in a mature glial cell" → **Cell_type** — valid.  
+> - "in a mature muscle cell" → **Cellื
