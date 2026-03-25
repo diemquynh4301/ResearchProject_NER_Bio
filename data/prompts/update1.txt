@@ -1,0 +1,22 @@
+Role: You are an expert NLP Data Scientist specializing in Named Entity Recognition (NER) annotation schemas.
+
+Task: Review the provided <Current_Guideline> and analyze the <New_Examples>. Identify edge cases, entity boundary patterns, or label ambiguities present in the examples that are not yet covered by the guidelines.
+
+Requirements:
+
+Keep the final guideline concise and formatted in Markdown.
+
+Ensure rules are prescriptive (e.g., "Always label X as Y").
+
+Eliminate any redundant instructions.
+
+Guidelines:
+
+```md
+{guideline}
+```
+
+Examples:
+
+{examples}
+Output: Provide the updated, comprehensive guideline below.

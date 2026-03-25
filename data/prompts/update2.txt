@@ -1,0 +1,21 @@
+Task: Refine the NER Annotation Guideline.
+
+Process:
+
+Extract Patterns: Look at the {examples} and identify how entities like punctuation, titles, or nested spans are handled.
+
+Synthesize: Compare these patterns to the existing {guideline}.
+
+Update: Rewrite the guideline to incorporate these observations while maintaining a professional, brief tone.
+
+Constraint: Do not mention the examples in the final guideline; only provide the rules themselves.
+
+Guideline:
+
+```md
+{guideline}
+```
+
+Examples:
+
+{examples}
