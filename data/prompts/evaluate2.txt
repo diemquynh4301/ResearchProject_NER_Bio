@@ -1,0 +1,30 @@
+Task: Expert Biomedical NER Extraction
+
+Context: You are an expert annotator. Follow the provided <Guideline> strictly to extract entities from the <Text>.
+
+```md
+{guideline}
+```
+
+Given text: {text}
+
+Process:
+1. Analysis: Scan the text for technical terms. Identify if any entities are nested (e.g., a protein inside a cell line).
+2. Verification: Cross-reference identified terms with the "Boundary Rules" in the guideline.
+3. Extraction: Format the verified entities into the required JSON structure.
+
+Each dictionary must contain:
+- text: the exact entity mention as it appears in the text.
+- type: the corresponding entity type defined in the guideline.
+
+Return your answer as a list of dictionaries in the following format:
+
+```json
+[
+  {{"text": "entity_text", "type": "entity_type"}},
+  {{"text": "another_entity", "type": "entity_type"}}
+]
+```
+
+Only include entities that are explicitly defined in the guideline.
+Do not include explanations or additional text in your response.

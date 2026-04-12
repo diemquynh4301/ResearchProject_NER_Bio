@@ -131,12 +131,25 @@ for i in trange(len(data)):
 
 gold_set = gather_entities(data, "entities")
 pred_set = gather_entities(data, "pred_entities")
+overall_metrics = compute_f1_metrics(pred_set, gold_set)
 
-metrics = compute_f1_metrics(pred_set, gold_set)
+entity_types = set([e[1] for e in gold_set]) 
+per_entity_metrics = {}
+
+for etype in entity_types:
+    specific_gold = {e for e in gold_set if e[1] == etype}
+    specific_pred = {e for e in pred_set if e[1] == etype}
+    
+    if len(specific_gold) > 0 or len(specific_pred) > 0:
+        per_entity_metrics[etype] = compute_f1_metrics(specific_pred, specific_gold)
+
+final_output = {
+    "overall": overall_metrics,
+    "per_entity": per_entity_metrics
+}
 
 print("\n===== FINAL METRICS =====")
-print(json.dumps(metrics, indent=2))
-
+print(json.dumps(final_output, indent=2))
 
 # ==================================================
 # Save everything
@@ -144,4 +157,4 @@ print(json.dumps(metrics, indent=2))
 write_jsonl(output_dir / "eval_results.jsonl", data)
 
 with open(output_dir / "metrics.json", "w") as f:
-    json.dump(metrics, f, indent=2)
+    json.dump(final_output, f, indent=2)
